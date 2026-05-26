@@ -65,6 +65,21 @@ A child's relationship to a parent has structure: asking, receiving, gratitude. 
 
 The prayer-hearing-vow cycle is the **same kind** of structure. Real, traceable, biblical, canonized in the Psalter. But it is the choreography of a relationship, not the terms of an exchange. The wicked mistake the choreography for the exchange and reject it when it does not yield. The friends mistake the choreography for the exchange and use it to diagnose Job's guilt. Both have made a category error about what kind of structure this is.
 
+## The OT precedent — *ūlay* (peradventure)
+
+The Gethsemane form does not appear suddenly in the NT. Its OT precedent is the Hebrew particle ***ūlay*** — *"perhaps, peradventure, it may be."* This is the canonical word for **intercession that does not presume**:
+
+- **Abraham interceding for Sodom** (Gen 18:24-32) — six iterations of *ūlay* as he bargains down from fifty righteous to ten
+- **Moses after the golden calf** (Ex 32:30) — *"peradventure (ūlay) I shall make an atonement for your sin"*
+- **The sailors in the storm with Jonah** (Jonah 1:6) — *"peradventure (ūlay) God will think upon us"*
+- **Joel's call to repentance** (Joel 2:14) — *"who knoweth if (ūlay) he will return"*
+- **Amos 5:15** — *"hate the evil, and love the good... it may be (ūlay) that the LORD God of hosts will be gracious unto the remnant"*
+- **Hezekiah asking Isaiah to intercede** (Isa 37:4 — see [`./isaiah-37-4.md`](./isaiah-37-4/)) — *"it may be (ūlay) the LORD thy God will hear"*
+
+***Ūlay*** is the request that does not bind the answer to its form. The petitioner approaches with full honesty about not controlling the outcome. The request is real; the demand is absent. The trust is precisely *in* the not-knowing.
+
+The relational direction in OT vocabulary is the *ūlay*-posture. The transactional direction would never say *ūlay* — it would demand based on the contract. The wicked of Job 21:15 do not say *ūlay*; they say *what profit if we pray*. The friends do not say *ūlay*; they say *pay your vows and prosper*. The relational intercessor says *ūlay*, then prays anyway.
+
 ## Christ at Gethsemane — the canonical demonstration
 
 **Matthew 26:39:** *"O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt."*

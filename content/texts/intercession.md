@@ -41,6 +41,18 @@ This is a recognizable mode across scripture — Moses interceding for Israel af
 | **1 Samuel 15:11** | "it grieved Samuel; and he cried unto the LORD all night" — after Saul's rejection |
 | **Jeremiah 15:1** | retrospective: "Though Moses and Samuel stood before me, yet my mind could not be toward this people" — Moses and Samuel canonized as the paradigm intercessors |
 
+### Hezekiah — the king who asks the prophet
+
+The king-asks-prophet mode of intercession. During the Assyrian siege of 701 BCE, Hezekiah rends his clothes, puts on sackcloth, goes into the temple, and sends his senior officials to Isaiah with a request for prayer ([`./isaiah-37-4.md`](./isaiah-37-4/)).
+
+| Reference | Substance |
+|---|---|
+| **Isaiah 37:4 / 2 Kgs 19:4** | *"It may be (ūlay) the LORD thy God will hear... wherefore lift up thy prayer for the remnant that is left"* — the canonical *ūlay* intercessory protocol |
+| **Isaiah 37:14-20** | Hezekiah's own subsequent prayer: spreads the threatening letter before the LORD in the temple; addresses God specifically (*"that dwellest between the cherubims"*); identifies the offense (the kings of Assyria have *"cast their gods into the fire: for they were no gods"*); culminates in the supreme intercessory move — *"that all the kingdoms of the earth may know that thou art the LORD, even thou only"* (v.20). The petition's purpose-clause is God's reputation, not Israel's survival. |
+| **Isaiah 37:36-38** | the resolution — angel of YHWH strikes 185,000 Assyrians overnight; Sennacherib goes home; assassinated by his own sons |
+
+Two moves canonized by Hezekiah: (a) the *ūlay* posture — petition without demand, the OT correlate of Gethsemane's *"if it be possible, nevertheless not as I will"*; (b) the purpose-clause oriented to God's name, not the petitioner's outcome.
+
 ### Nehemiah — corporate confession in exile
 
 | Reference | Substance |
