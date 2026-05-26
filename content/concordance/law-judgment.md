@@ -2,7 +2,7 @@
 
 1,276 verses · regex `judg(e|es|ed|eth|est|edst|ing|ment|ments)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

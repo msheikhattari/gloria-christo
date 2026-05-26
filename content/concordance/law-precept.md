@@ -2,7 +2,7 @@
 
 29 verses · regex `precept(s)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

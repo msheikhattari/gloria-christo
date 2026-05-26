@@ -2,7 +2,7 @@
 
 47 verses · regex `reap(s|ed|eth|est|edst|ing|er|ers)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

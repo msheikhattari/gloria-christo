@@ -2,7 +2,7 @@
 
 83 verses · regex `delight(s|ed|eth|est|edst|ing|some|ful|fully)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

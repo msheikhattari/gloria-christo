@@ -2,7 +2,7 @@
 
 194 verses · regex `wrath(ful|fully|s)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

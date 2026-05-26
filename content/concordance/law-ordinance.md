@@ -2,7 +2,7 @@
 
 53 verses · regex `ordinance(s)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

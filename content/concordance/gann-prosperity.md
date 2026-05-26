@@ -2,7 +2,7 @@
 
 92 verses · regex `prosper(s|ed|eth|est|ing|ity|ous|ously)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

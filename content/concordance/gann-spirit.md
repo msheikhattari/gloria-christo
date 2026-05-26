@@ -2,7 +2,7 @@
 
 525 verses · regex `spirit(s|ual|ually)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

@@ -2,7 +2,7 @@
 
 6,705 verses · regex `JEHOVAH|LORD`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

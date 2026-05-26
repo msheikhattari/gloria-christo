@@ -2,7 +2,7 @@
 
 224 verses · regex `truth(s|ful|fully)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

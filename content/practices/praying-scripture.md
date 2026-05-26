@@ -128,9 +128,9 @@ Pray each Psalm as if it's *your* prayer — even when the emotional register do
 - **Jesus's High Priestly Prayer** (John 17) — Christ praying for his own
 - **Stephen's last words** (Acts 7:59-60) — "Lord, lay not this sin to their charge"
 
-## Integration with the inversion principle (CLAUDE.md)
+## Integration with the inversion principle
 
-From `/Users/msheikhattari/Documents/Odyssey/CLAUDE.md`:
+An applicable principle:
 
 > *"Inversion. What you most want for yourself, pray outward for others. Not renunciation — same circuit. Self and other are not separate enough for the distinction to hold."*
 
@@ -224,9 +224,9 @@ Scripture's prayers have been answered for 2,000+ years. Stepping into them is s
 
 ## Cross-references
 
-- [`chanting-and-singing.md`](./chanting-and-singing.md) — the practice that carries the prayer (chanting JEHOVAH while praying scripture's content)
-- [`memorization-priority.md`](./memorization-priority.md) — what to memorize first (memorized scripture = available prayer-content)
-- [`memorization-methods.md`](./memorization-methods.md) — how to internalize the text
+- [`chanting-and-singing.md`](./chanting-and-singing/) — the practice that carries the prayer (chanting JEHOVAH while praying scripture's content)
+- [`memorization-priority.md`](./memorization-priority/) — what to memorize first (memorized scripture = available prayer-content)
+- [`memorization-methods.md`](./memorization-methods/) — how to internalize the text
 - [`../concordance/`](../concordance/) — every keyword's verses (the substrate for scripture-shaped prayer)
 - W.D. Gann, *The Magic Word* (1950) — Gann's complementary frame
 

@@ -67,6 +67,6 @@ This is the direct prefiguration of zero-traceability in service. Hur is the Hur
 
 ## Cross-references
 
-- [`./psalm-36-11.md`](./psalm-36-11.md) — the pride-petition sister text (pride's foot vs. the sustainer posture)
-- [`../practices/praying-for-humility.md`](../practices/praying-for-humility.md) — the humility cycle the sustainer posture quietly embodies
-- [`../practices/praying-scripture.md`](../practices/praying-scripture.md) — the broader lens of praying scripture
+- [`./psalm-36-11.md`](./psalm-36-11/) — the pride-petition sister text (pride's foot vs. the sustainer posture)
+- [`../practices/praying-for-humility.md`](../practices/praying-for-humility/) — the humility cycle the sustainer posture quietly embodies
+- [`../practices/praying-scripture.md`](../practices/praying-scripture/) — the broader lens of praying scripture

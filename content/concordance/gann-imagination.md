@@ -2,7 +2,7 @@
 
 37 verses · regex `imagin(e|ed|eth|ation|ations|ing|ings)`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

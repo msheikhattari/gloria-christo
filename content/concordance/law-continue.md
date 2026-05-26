@@ -2,7 +2,7 @@
 
 192 verses · regex `continu(e|es|ed|eth|est|ing|ance|ances|al|ally)`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

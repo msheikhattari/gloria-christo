@@ -2,7 +2,7 @@
 
 46 verses · regex `patien(ce|t|tly)`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

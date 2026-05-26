@@ -2,7 +2,7 @@
 
 165 verses · regex `sing(s|eth|est|edst|ing|er|ers|able)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

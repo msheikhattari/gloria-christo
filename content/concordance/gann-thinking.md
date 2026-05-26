@@ -2,7 +2,7 @@
 
 209 verses · regex `think(s|er|ers|ing|eth|est)?|thought(s)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

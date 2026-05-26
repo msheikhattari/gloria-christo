@@ -2,7 +2,7 @@
 
 109 verses · regex `pride|proud(ly|ness)?|haughty|haughtiness`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

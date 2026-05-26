@@ -2,7 +2,7 @@
 
 460 verses · regex `bless(s|ed|eth|est|edst|ing|ings|edness|edly)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

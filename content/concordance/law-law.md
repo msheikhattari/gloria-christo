@@ -2,7 +2,7 @@
 
 522 verses · regex `law(s|ful|fully|fulness|less|lessly|lessness|giver|givers|less)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

@@ -2,7 +2,7 @@
 
 419 verses · regex `love(s|d|st|dst|th|eth|ly|liness)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

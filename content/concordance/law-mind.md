@@ -2,7 +2,7 @@
 
 130 verses · regex `mind(s|ed|eth|est|edst|ing|ful)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

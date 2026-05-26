@@ -2,7 +2,7 @@
 
 1,188 verses · regex `word(s)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

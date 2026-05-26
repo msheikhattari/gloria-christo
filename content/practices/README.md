@@ -6,11 +6,11 @@ How to actually work with scripture. The files in this folder are operational, n
 
 | File | What it covers |
 |---|---|
-| [`memorization-priority.md`](./memorization-priority.md) | What to memorize first. Tier 1 (~30 verses), Tier 2 (~40 more), Tier 3 (whole texts). The irreducible kernel = 184 verses. |
-| [`memorization-methods.md`](./memorization-methods.md) | How to memorize so it sticks. 15 techniques ranked by leverage. Acceleration paths to 2-3+ verses/day sustainable. |
-| [`chanting-and-singing.md`](./chanting-and-singing.md) | The practice of vocal scripture. Gann's specific JEHOVAH chant + biblical commands on singing + Psalm-headings glossary + Song of Solomon. |
-| [`praying-scripture.md`](./praying-scripture.md) | The lens of praying for what scripture identifies as worth asking. Three categories: command-as-petition, promise-as-confidence, scripture's-own-prayers. |
-| [`praying-for-humility.md`](./praying-for-humility.md) | Specific daily cycle for praying against pride: Psalm 131 + Psalm 51:10-17 + Psalm 36:11. The seven Penitential Psalms (extended cycle). The Jesus Prayer as irreducible kernel. |
+| [`memorization-priority.md`](./memorization-priority/) | What to memorize first. Tier 1 (~30 verses), Tier 2 (~40 more), Tier 3 (whole texts). The irreducible kernel = 184 verses. |
+| [`memorization-methods.md`](./memorization-methods/) | How to memorize so it sticks. 15 techniques ranked by leverage. Acceleration paths to 2-3+ verses/day sustainable. |
+| [`chanting-and-singing.md`](./chanting-and-singing/) | The practice of vocal scripture. Gann's specific JEHOVAH chant + biblical commands on singing + Psalm-headings glossary + Song of Solomon. |
+| [`praying-scripture.md`](./praying-scripture/) | The lens of praying for what scripture identifies as worth asking. Three categories: command-as-petition, promise-as-confidence, scripture's-own-prayers. |
+| [`praying-for-humility.md`](./praying-for-humility/) | Specific daily cycle for praying against pride: Psalm 131 + Psalm 51:10-17 + Psalm 36:11. The seven Penitential Psalms (extended cycle). The Jesus Prayer as irreducible kernel. |
 
 ## The practices integrated
 
@@ -30,13 +30,13 @@ A full daily rhythm using all of them:
 ## Reading order
 
 If new to this work:
-1. **[`praying-scripture.md`](./praying-scripture.md)** first — orients the whole practice
-2. **[`memorization-priority.md`](./memorization-priority.md)** — what to start with
-3. **[`memorization-methods.md`](./memorization-methods.md)** — how to do it
-4. **[`chanting-and-singing.md`](./chanting-and-singing.md)** — the vocal layer
+1. **[`praying-scripture.md`](./praying-scripture/)** first — orients the whole practice
+2. **[`memorization-priority.md`](./memorization-priority/)** — what to start with
+3. **[`memorization-methods.md`](./memorization-methods/)** — how to do it
+4. **[`chanting-and-singing.md`](./chanting-and-singing/)** — the vocal layer
 
 ## Cross-references
 
 - [`../concordance/`](../concordance/) — keyword verse lists (substrate for all the practices)
 - [`../texts/`](../texts/) — close readings of specific passages that the practices draw on (e.g., `psalm-36-11.md` is the substrate for the humility cycle)
-- [`../README.md`](../README.md) — repo overview + the four-frame method
+- [`../README.md`](../) — repo overview + the four-frame method

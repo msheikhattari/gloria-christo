@@ -2,7 +2,7 @@
 
 64 verses · regex `humble(d|s|st|th|ness)?|humility|humbly`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

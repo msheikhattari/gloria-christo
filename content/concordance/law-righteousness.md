@@ -2,7 +2,7 @@
 
 506 verses · regex `righteous(ly|ness)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

@@ -2,7 +2,7 @@
 
 612 verses · regex `keep(s|er|ers|ing|est|eth|edst)?|kept`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

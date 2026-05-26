@@ -2,7 +2,7 @@
 
 392 verses · regex `walk(s|ed|eth|est|edst|ing)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

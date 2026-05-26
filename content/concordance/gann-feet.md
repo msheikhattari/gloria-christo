@@ -2,7 +2,7 @@
 
 347 verses · regex `feet|foot|footsteps|footstool`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

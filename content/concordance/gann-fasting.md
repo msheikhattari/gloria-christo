@@ -2,7 +2,7 @@
 
 104 verses · regex `fast(s|ed|eth|ing)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

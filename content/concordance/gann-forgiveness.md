@@ -2,7 +2,7 @@
 
 104 verses · regex `forg(ive|iven|ave|iving|iveth|iveness|avest|ivest)`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

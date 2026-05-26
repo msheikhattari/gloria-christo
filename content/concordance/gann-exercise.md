@@ -2,7 +2,7 @@
 
 15 verses · regex `exercis(e|es|ed|eth|est|ing)`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

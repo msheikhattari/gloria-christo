@@ -2,7 +2,7 @@
 
 460 verses · regex `wisdom|wise(s|ly|r|st)?|wisest`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

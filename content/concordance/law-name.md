@@ -2,7 +2,7 @@
 
 1,015 verses · regex `name(s|d|st|dst|th|eth|ly|less)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

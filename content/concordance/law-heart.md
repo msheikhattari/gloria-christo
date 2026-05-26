@@ -2,7 +2,7 @@
 
 878 verses · regex `heart(s|ed|edly)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

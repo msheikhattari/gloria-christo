@@ -2,7 +2,7 @@
 
 50 verses · regex `breath(e|es|ed|eth|est|ing|s)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

@@ -2,7 +2,7 @@
 
 94 verses · regex `sow(s|ed|eth|est|edst|ing|er|ers|n)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

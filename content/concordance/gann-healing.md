@@ -2,7 +2,7 @@
 
 131 verses · regex `heal(s|ed|eth|est|edst|ing|er|ers)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

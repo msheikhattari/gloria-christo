@@ -2,7 +2,7 @@
 
 336 verses · regex `faith(s|ful|fully|fulness|less)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

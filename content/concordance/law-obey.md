@@ -2,7 +2,7 @@
 
 159 verses · regex `obey(s|ed|eth|est|edst|ing)?|obedien(ce|t|tly)|disobey(s|ed|eth|ing)?|disobedien(ce|t|tly)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

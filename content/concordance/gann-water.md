@@ -2,7 +2,7 @@
 
 627 verses · regex `water(s|ed|eth|est|ing|y)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

@@ -2,7 +2,7 @@
 
 194 verses · regex `hate(s|d|st|dst|th|eth|ful|fully|ds|r|rs)?|hated|hatest|hateth|hatred`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

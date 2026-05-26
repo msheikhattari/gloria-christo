@@ -2,7 +2,7 @@
 
 96 verses · regex `vision(s|ed|eth|ary)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

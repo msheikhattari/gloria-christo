@@ -2,7 +2,7 @@
 
 25 verses · regex `charity|charit(y|able|ably|ies)`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

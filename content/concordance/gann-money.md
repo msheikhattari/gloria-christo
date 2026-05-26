@@ -2,7 +2,7 @@
 
 123 verses · regex `money(s|less)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

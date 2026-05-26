@@ -2,7 +2,7 @@
 
 208 verses · regex `song(s)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

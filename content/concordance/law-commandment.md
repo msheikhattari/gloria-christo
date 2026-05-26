@@ -2,7 +2,7 @@
 
 838 verses · regex `command(s|ed|eth|edst|ing|ment|ments|er|ers)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

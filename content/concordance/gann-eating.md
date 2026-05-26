@@ -2,7 +2,7 @@
 
 731 verses · regex `eat(s|en|eth|est|edst|ing|ings)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

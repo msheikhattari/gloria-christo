@@ -2,7 +2,7 @@
 
 594 verses · regex `evil(s|ly|ness|doer|doers)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

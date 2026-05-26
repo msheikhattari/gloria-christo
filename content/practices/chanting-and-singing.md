@@ -246,11 +246,11 @@ This is a substantial practice. The honest pace to build into it: start with the
 
 ## Part VI — Cross-references
 
-- [`memorization-priority.md`](./memorization-priority.md) — what to memorize first (chanted Psalms anchor here)
-- [`memorization-methods.md`](./memorization-methods.md) — singing/chanting as Tier 2 accelerator
-- [`praying-scripture.md`](./praying-scripture.md) — the prayer content that the chant carries
+- [`memorization-priority.md`](./memorization-priority/) — what to memorize first (chanted Psalms anchor here)
+- [`memorization-methods.md`](./memorization-methods/) — singing/chanting as Tier 2 accelerator
+- [`praying-scripture.md`](./praying-scripture/) — the prayer content that the chant carries
 - W.D. Gann, *The Magic Word* (1950) — framing + caveats
-- [`../concordance/gann-singing.md`](../concordance/gann-singing.md), [`gann-song.md`](../concordance/gann-song.md), [`gann-sound.md`](../concordance/gann-sound.md) — every Bible verse on singing/song/sound
+- [`../concordance/gann-singing.md`](../concordance/gann-singing/), [`gann-song.md`](../concordance/gann-song/), [`gann-sound.md`](../concordance/gann-sound/) — every Bible verse on singing/song/sound
 
 External references for chant tradition:
 - Cappella Romana (cappellaromana.org) — Byzantine chant

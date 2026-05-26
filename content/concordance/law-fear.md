@@ -2,7 +2,7 @@
 
 501 verses · regex `fear(s|ed|eth|est|edst|ing|ful|fully|fulness|less)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

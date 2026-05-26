@@ -2,7 +2,7 @@
 
 514 verses · regex `pray(er|ers|ed|eth|est|edst|ing|s)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

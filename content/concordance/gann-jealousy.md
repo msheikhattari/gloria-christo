@@ -2,7 +2,7 @@
 
 43 verses · regex `jealous(y|ies|ly)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

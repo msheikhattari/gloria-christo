@@ -2,7 +2,7 @@
 
 166 verses · regex `statute(s)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

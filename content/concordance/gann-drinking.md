@@ -2,7 +2,7 @@
 
 431 verses · regex `drink(s|en|eth|est|edst|ing|ings)?|drank|drunk(en|enness)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

@@ -2,7 +2,7 @@
 
 105 verses · regex `reward(s|ed|eth|est|edst|ing|er|ers)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

@@ -2,7 +2,7 @@
 
 229 verses · regex `anger(ed|eth|est|s)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

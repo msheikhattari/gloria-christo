@@ -2,7 +2,7 @@
 
 111 verses · regex `sound(s|ed|eth|est|edst|ing|ly)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

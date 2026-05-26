@@ -2,7 +2,7 @@
 
 14 verses · regex `doer(s)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

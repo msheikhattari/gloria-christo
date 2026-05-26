@@ -2,7 +2,7 @@
 
 313 verses · regex `sacrifice(s|d|st|dst|th|eth|ing)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

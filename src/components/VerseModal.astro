@@ -1,0 +1,429 @@
+---
+// Singleton modal for asking about a specific verse on concordance pages.
+// Enhances .verse-list <p> elements with an inline "ask" button.
+// Mobile: slides up from bottom as a bottom-sheet. Desktop: centered dialog.
+---
+
+<dialog id="verse-modal" class="verse-modal" aria-labelledby="vm-ref">
+  <div class="vm-inner">
+    <header class="vm-header">
+      <h2 id="vm-ref" class="vm-ref">Verse</h2>
+      <button type="button" class="vm-close" aria-label="close" data-vm-close>×</button>
+    </header>
+
+    <blockquote class="vm-text" id="vm-text" data-pagefind-ignore></blockquote>
+
+    <p class="muted vm-keymsg" data-vm-keymsg style="display: none;">
+      Set your <a href="/settings/">Anthropic API key</a> to enable.
+    </p>
+
+    <form class="vm-form" data-vm-form>
+      <textarea
+        data-vm-input
+        rows="2"
+        placeholder="ask about this verse — Hebrew/Greek, context, cross-refs, practice…"
+        required
+      ></textarea>
+      <div class="vm-actions">
+        <button type="submit" data-vm-submit>ask</button>
+        <button type="button" data-vm-stop style="display: none;">stop</button>
+        <span class="muted vm-hint">⌘/Ctrl + ↵</span>
+      </div>
+    </form>
+
+    <div class="vm-output prose" data-vm-output data-pagefind-ignore></div>
+
+    <p class="muted vm-footer italic">This is study; the prayer is yours.</p>
+  </div>
+</dialog>
+
+<script>
+  import { loadSettings } from "../lib/storage";
+  import { streamMessage } from "../lib/anthropic";
+  import { SYSTEM_PROMPT } from "../lib/system-prompt";
+
+  function renderMarkdown(text: string): string {
+    const esc = (s: string) =>
+      s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    const inline = (s: string) =>
+      s
+        .replace(/`([^`]+)`/g, "<code>$1</code>")
+        .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+        .replace(/\*([^*]+)\*/g, "<em>$1</em>");
+
+    const lines = text.split("\n");
+    let html = "";
+    let inList = false;
+    let inBlockquote = false;
+    const closeBlocks = () => {
+      if (inList) { html += "</ul>"; inList = false; }
+      if (inBlockquote) { html += "</blockquote>"; inBlockquote = false; }
+    };
+    for (const raw of lines) {
+      const line = esc(raw);
+      if (/^#{1,4}\s+/.test(line)) {
+        closeBlocks();
+        const lvl = (line.match(/^(#+)/) as RegExpMatchArray)[1].length;
+        const t = line.replace(/^#+\s+/, "");
+        const h = Math.min(lvl + 2, 4);
+        html += `<h${h}>${inline(t)}</h${h}>`;
+      } else if (/^>\s?/.test(line)) {
+        if (!inBlockquote) { html += "<blockquote>"; inBlockquote = true; }
+        html += `<p>${inline(line.replace(/^>\s?/, ""))}</p>`;
+      } else if (/^[-*]\s+/.test(line)) {
+        if (!inList) { html += "<ul>"; inList = true; }
+        html += `<li>${inline(line.replace(/^[-*]\s+/, ""))}</li>`;
+      } else if (line.trim() === "") {
+        closeBlocks();
+      } else {
+        closeBlocks();
+        html += `<p>${inline(line)}</p>`;
+      }
+    }
+    closeBlocks();
+    return html;
+  }
+
+  function getKeywordFromPath(): string {
+    const m = window.location.pathname.match(/\/concordance\/([^/]+)/);
+    if (!m) return "";
+    return m[1].replace(/^(gann|law)-/, "");
+  }
+
+  function buildVerseMessage(
+    verseRef: string,
+    verseText: string,
+    keyword: string,
+    question: string
+  ): string {
+    return `# Verse
+
+**${verseRef}** — ${verseText}
+
+(From the gloria-christo concordance entry for "${keyword}")
+
+---
+
+# My question
+
+${question}`;
+  }
+
+  const modal = document.getElementById("verse-modal") as HTMLDialogElement;
+  if (modal) {
+    const refEl = modal.querySelector("#vm-ref") as HTMLElement;
+    const textEl = modal.querySelector("#vm-text") as HTMLElement;
+    const form = modal.querySelector("[data-vm-form]") as HTMLFormElement;
+    const input = modal.querySelector("[data-vm-input]") as HTMLTextAreaElement;
+    const submit = modal.querySelector("[data-vm-submit]") as HTMLButtonElement;
+    const stop = modal.querySelector("[data-vm-stop]") as HTMLButtonElement;
+    const output = modal.querySelector("[data-vm-output]") as HTMLElement;
+    const keymsg = modal.querySelector("[data-vm-keymsg]") as HTMLElement;
+    const closeBtn = modal.querySelector("[data-vm-close]") as HTMLButtonElement;
+
+    let currentRef = "";
+    let currentText = "";
+    let controller: AbortController | null = null;
+
+    function refreshKeyMsg() {
+      const s = loadSettings();
+      const has = s.apiKey.trim().length > 0;
+      keymsg.style.display = has ? "none" : "block";
+      submit.disabled = !has;
+    }
+
+    function openModalFor(ref: string, text: string) {
+      currentRef = ref;
+      currentText = text;
+      refEl.textContent = ref;
+      textEl.textContent = text;
+      output.innerHTML = "";
+      input.value = "";
+      refreshKeyMsg();
+      modal.showModal();
+      // Slight delay so focus doesn't conflict with modal animation on iOS
+      setTimeout(() => input.focus(), 50);
+    }
+
+    function closeModal() {
+      if (controller) { controller.abort(); controller = null; }
+      modal.close();
+    }
+
+    closeBtn.addEventListener("click", closeModal);
+
+    // Click on backdrop closes (click target IS the dialog, not its inner)
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const settings = loadSettings();
+      if (!settings.apiKey.trim()) { refreshKeyMsg(); return; }
+      const question = input.value.trim();
+      if (!question) return;
+
+      output.textContent = "";
+      submit.style.display = "none";
+      stop.style.display = "inline-block";
+      controller = new AbortController();
+
+      let accumulated = "";
+      const keyword = getKeywordFromPath();
+
+      await streamMessage({
+        apiKey: settings.apiKey,
+        model: settings.model,
+        system: SYSTEM_PROMPT,
+        userMessage: buildVerseMessage(currentRef, currentText, keyword, question),
+        onText: (chunk) => {
+          accumulated += chunk;
+          output.innerHTML = renderMarkdown(accumulated);
+        },
+        onError: (msg) => {
+          output.innerHTML = `<p class="muted"><strong>Error:</strong> ${msg}</p>`;
+        },
+        onDone: () => {
+          submit.style.display = "inline-block";
+          stop.style.display = "none";
+          controller = null;
+        },
+        abortSignal: controller.signal,
+      });
+    });
+
+    stop.addEventListener("click", () => {
+      if (controller) controller.abort();
+    });
+
+    input.addEventListener("keydown", (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "Enter") {
+        form.requestSubmit();
+      }
+    });
+
+    // ─── Enhance .verse-list <p> elements with an ask button ───
+    document.querySelectorAll<HTMLParagraphElement>(".verse-list p").forEach((p) => {
+      const strong = p.querySelector(":scope > strong");
+      if (!strong) return;
+      const ref = strong.textContent?.trim() ?? "";
+      if (!ref) return;
+      // Extract verse text: everything in <p> after the <strong> + " — "
+      const fullText = (p.textContent ?? "").trim();
+      const verseText = fullText.replace(ref, "").replace(/^\s*[—–-]\s*/, "").trim();
+
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "verse-ask-btn no-print";
+      btn.textContent = "ask";
+      btn.setAttribute("aria-label", `ask about ${ref}`);
+      btn.dataset.ref = ref;
+      btn.dataset.text = verseText;
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        openModalFor(ref, verseText);
+      });
+      p.appendChild(document.createTextNode(" "));
+      p.appendChild(btn);
+    });
+  }
+</script>
+
+<style>
+  /* ─── Inline per-verse "ask" button ─── */
+  :global(.verse-ask-btn) {
+    display: inline-block;
+    margin-left: 0.5em;
+    padding: 0.05em 0.55em;
+    background: transparent;
+    color: var(--color-muted);
+    border: 1px solid var(--color-rule);
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    font-size: 0.72em;
+    line-height: 1.5;
+    cursor: pointer;
+    vertical-align: baseline;
+    transition: color 100ms, border-color 100ms;
+    /* Mobile tap target: keep visually small but make the hit area larger via touch-action */
+    -webkit-tap-highlight-color: transparent;
+  }
+  :global(.verse-ask-btn:hover),
+  :global(.verse-ask-btn:focus-visible) {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    outline: none;
+  }
+  /* On touch devices, give the button more breathing room for taps */
+  @media (hover: none) and (pointer: coarse) {
+    :global(.verse-ask-btn) {
+      padding: 0.2em 0.7em;
+      font-size: 0.78em;
+    }
+  }
+
+  /* ─── Modal: desktop = centered dialog; mobile = bottom sheet ─── */
+  .verse-modal {
+    border: 1px solid var(--color-rule);
+    border-radius: 8px;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    padding: 0;
+    max-width: 640px;
+    width: calc(100% - 2rem);
+    max-height: 88vh;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+  .verse-modal::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+  }
+  .verse-modal[open] {
+    animation: vmFadeIn 150ms ease-out;
+  }
+  @keyframes vmFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .vm-inner {
+    display: flex;
+    flex-direction: column;
+    max-height: 88vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem 1.25rem 1.25rem;
+  }
+
+  .vm-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .vm-ref {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin: 0;
+    flex: 1;
+  }
+  .vm-close {
+    background: none;
+    border: none;
+    color: var(--color-muted);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.2em 0.4em;
+    margin-right: -0.4em;
+  }
+  .vm-close:hover { color: var(--color-fg); }
+
+  .vm-text {
+    margin: 0.25rem 0 1rem;
+    padding-inline-start: 1em;
+    border-inline-start: 2px solid var(--color-accent);
+    color: var(--color-fg);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .vm-keymsg {
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0.5rem;
+  }
+
+  .vm-form textarea {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    background: var(--color-card);
+    color: var(--color-fg);
+    border: 1px solid var(--color-rule);
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    resize: vertical;
+    /* iOS Safari: prevent zoom-on-focus by using 16px+ font (95%≈15.2 of 17 = 16.2, OK) */
+  }
+  .vm-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+  .vm-actions {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .vm-actions button {
+    background: var(--color-card);
+    color: var(--color-fg);
+    border: 1px solid var(--color-rule);
+    border-radius: 4px;
+    padding: 0.5rem 1.1rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .vm-actions button:hover:not(:disabled) {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+  .vm-actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .vm-hint {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+  }
+
+  .vm-output {
+    margin-top: 1rem;
+  }
+  .vm-output:empty { display: none; }
+
+  .vm-footer {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 1.25rem 0 0;
+  }
+
+  /* Mobile: full-width bottom sheet */
+  @media (max-width: 640px) {
+    .verse-modal {
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+      border-radius: 14px 14px 0 0;
+      border-bottom: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-height: 85vh;
+    }
+    .verse-modal[open] {
+      animation: vmSlideUp 200ms ease-out;
+    }
+    @keyframes vmSlideUp {
+      from { transform: translateY(100%); }
+      to   { transform: translateY(0); }
+    }
+    .vm-inner {
+      max-height: 85vh;
+      padding: 1.25rem 1rem 1.5rem;
+    }
+    /* iOS safe area for the bottom sheet */
+    .vm-inner {
+      padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+    }
+  }
+</style>

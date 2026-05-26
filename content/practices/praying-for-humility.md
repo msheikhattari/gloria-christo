@@ -50,7 +50,7 @@ The cleanest single-verse prayer for protection from pride.
 
 Memorize. Pray as a daily petition — morning, before any work that risks pride; before meetings, before publishing, before teaching.
 
-**Close reading (Hebrew + Greek):** see [`../texts/psalm-36-11.md`](../texts/psalm-36-11.md) for the word-by-word analysis (pride as foot walking toward you; *saleuō* as the shake-loose verb of Heb 12; the diagnostic that pride dis-places).
+**Close reading (Hebrew + Greek):** see [`../texts/psalm-36-11.md`](../texts/psalm-36-11/) for the word-by-word analysis (pride as foot walking toward you; *saleuō* as the shake-loose verb of Heb 12; the diagnostic that pride dis-places).
 
 ## The descriptive psalms (warning + commendation)
 
@@ -146,7 +146,7 @@ If pride is what you're being given to see in yourself right now, this is a sust
 - Pray the full Psalm 51
 - Notice what shifted in the week
 
-## The inversion ()
+## The inversion
 
 The inversion principle: what you most want for yourself, pray outward for others. The humility version:
 
@@ -171,15 +171,15 @@ The diagnostic question from Psalm 131: *am I exercising myself in great matters
 
 ## Cross-references
 
-- [`praying-scripture.md`](./praying-scripture.md) — the broader lens of praying scripture's commands and promises; this file is the humility-specific instance
-- [`memorization-priority.md`](./memorization-priority.md) — Psalm 119 is the Tier 3 anchor; the pride/humility cluster within it deserves its own memorization
-- [`chanting-and-singing.md`](./chanting-and-singing.md) — the Jesus Prayer is chantable; pair with the JEHOVAH chant before bed
-- [`../concordance/law-pride.md`](../concordance/law-pride.md) — 109 verses on pride across KJV (the substrate)
-- [`../concordance/law-humble.md`](../concordance/law-humble.md) — 64 verses on humility across KJV
-- [`../concordance/law-heart.md`](../concordance/law-heart.md) — the broken/contrite-heart cluster (Ps 34:18, 51:17, 147:3) lives here
+- [`praying-scripture.md`](./praying-scripture/) — the broader lens of praying scripture's commands and promises; this file is the humility-specific instance
+- [`memorization-priority.md`](./memorization-priority/) — Psalm 119 is the Tier 3 anchor; the pride/humility cluster within it deserves its own memorization
+- [`chanting-and-singing.md`](./chanting-and-singing/) — the Jesus Prayer is chantable; pair with the JEHOVAH chant before bed
+- [`../concordance/law-pride.md`](../concordance/law-pride/) — 109 verses on pride across KJV (the substrate)
+- [`../concordance/law-humble.md`](../concordance/law-humble/) — 64 verses on humility across KJV
+- [`../concordance/law-heart.md`](../concordance/law-heart/) — the broken/contrite-heart cluster (Ps 34:18, 51:17, 147:3) lives here
 
 **Derived analyses** (committed, outside this folder):
-- [`../texts/psalm-36-11.md`](../texts/psalm-36-11.md) — Hebrew + Greek close reading of the daily anti-pride petition
+- [`../texts/psalm-36-11.md`](../texts/psalm-36-11/) — Hebrew + Greek close reading of the daily anti-pride petition
 - Future entries for Psalm 131, Psalm 51:10-17, Psalm 25, Luke 18:9-14 would also land in `../texts/`. See that folder's README for convention.
 
 ## External

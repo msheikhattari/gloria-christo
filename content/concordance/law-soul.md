@@ -2,7 +2,7 @@
 
 497 verses · regex `soul(s)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

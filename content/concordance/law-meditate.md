@@ -2,7 +2,7 @@
 
 20 verses · regex `meditat(e|es|ed|eth|est|ing|ion|ions)`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

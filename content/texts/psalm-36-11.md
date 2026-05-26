@@ -124,7 +124,7 @@ That smallness is the substance. Not "destroy my enemies," not "give me kingdoms
 
 ## Cross-references
 
-- [`../practices/praying-for-humility.md`](../practices/praying-for-humility.md) — **this verse is the daily petition** in that cycle (Psalm 131 + Psalm 51:10-17 + Psalm 36:11). The practice file gives the daily rhythm; this file gives the close-reading substrate.
-- [`../concordance/law-pride.md`](../concordance/law-pride.md) — verses on pride across KJV
-- [`../concordance/law-humble.md`](../concordance/law-humble.md) — verses on humility across KJV
-- [`./moses-aaron-hur.md`](./moses-aaron-hur.md) — the third-register sister text (sustainer-as-faith)
+- [`../practices/praying-for-humility.md`](../practices/praying-for-humility/) — **this verse is the daily petition** in that cycle (Psalm 131 + Psalm 51:10-17 + Psalm 36:11). The practice file gives the daily rhythm; this file gives the close-reading substrate.
+- [`../concordance/law-pride.md`](../concordance/law-pride/) — verses on pride across KJV
+- [`../concordance/law-humble.md`](../concordance/law-humble/) — verses on humility across KJV
+- [`./moses-aaron-hur.md`](./moses-aaron-hur/) — the third-register sister text (sustainer-as-faith)

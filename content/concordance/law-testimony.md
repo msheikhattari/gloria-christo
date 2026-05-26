@@ -2,7 +2,7 @@
 
 275 verses · regex `testimon(y|ies)|witness(es|ed|eth|ing|ings)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

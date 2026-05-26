@@ -2,7 +2,7 @@
 
 181 verses · regex `abi(de|des|deth|dest|ding)|abode`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 

@@ -2,7 +2,7 @@
 
 425 verses · regex `peace(s|able|ably|ful|fully)?`
 
-[← back to concordance](./README.md)
+[← back to concordance](./)
 
 ---
 
