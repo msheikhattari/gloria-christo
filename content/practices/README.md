@@ -11,6 +11,7 @@ How to actually work with scripture. The files in this folder are operational, n
 | [`chanting-and-singing.md`](./chanting-and-singing/) | The practice of vocal scripture. Gann's specific JEHOVAH chant + biblical commands on singing + Psalm-headings glossary + Song of Solomon. |
 | [`praying-scripture.md`](./praying-scripture/) | The lens of praying for what scripture identifies as worth asking. Three categories: command-as-petition, promise-as-confidence, scripture's-own-prayers. |
 | [`praying-for-humility.md`](./praying-for-humility/) | Specific daily cycle for praying against pride: Psalm 131 + Psalm 51:10-17 + Psalm 36:11. The seven Penitential Psalms (extended cycle). The Jesus Prayer as irreducible kernel. |
+| [`clean-hands.md`](./clean-hands/) | The prophetic remedy of Isaiah 1:16-17 operationalized. Nine-move sequence (wash / purify / remove / cease / learn / seek / straighten / judge / plead) with three forms — 3-min daily, 10-15-min pre-prayer, 30-45-min weekly. The pre-prayer audit. |
 
 ## The practices integrated
 

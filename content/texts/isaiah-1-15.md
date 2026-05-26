@@ -146,41 +146,78 @@ Job's claim — *no violence in my palms; my prayer is pure* — is the affirmat
 
 The verse explicitly rejects the assumption that **more** prayer fixes the disconnect (*gam kī-tarbū tephillā* — *even when* you multiply prayer). When prayer feels disconnected, the prophetic move is not "intensify the practice" but "examine the practice's foundation." The lampstand-oil prayer of Job 16:17 (the *zakkāh*) — the brief, pure, sustained address from clean hands — is the form that is heard regardless of volume.
 
-## The remedy — vv.16-17 as practice candidate
+## The remedy — vv.16-17 as a nine-move sequence
 
-The verse names the disconnect. The remedy follows in vv.16-17, in a discrete sequence of moves the prophet prescribes. This is the kind of scripture that is ready for practice distillation — the protocol is already laid out; the practice file just operationalizes it.
+The verse names the disconnect. The remedy follows in vv.16-17, in a **discrete sequence of nine imperatives** the prophet prescribes. This is the kind of scripture that is ready for practice distillation — the protocol is already laid out; the practice work is to operationalize it.
 
 > *"Wash you, make you clean; put away the evil of your doings from before mine eyes; cease to do evil; learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow."* (Isaiah 1:16-17)
 
-The eight moves:
+### The structural pattern — three phases
 
-1. **Wash you** — *raḥaṣū* — the affirmative ritual cleansing (the prerequisite Ps 26:6 also names)
-2. **Make you clean** — *hizzakkū* — same root as *zakkāh* (Job 16:17): make yourselves pure, oil-pure
-3. **Put away the evil of your doings** — *hāsîrū rōa' ma'allêkhem* — remove the harm from your acts
-4. **Cease to do evil** — *ḥidlū hārēa'* — the active stop
-5. **Learn to do well** — *limdū hêṭêv* — *limdū*, study, learn — the discipline of practiced good
-6. **Seek judgment** — *dirshū mishpāṭ* — pursue justice, seek it actively
-7. **Relieve the oppressed** — *ashshərū ḥāmōṣ* — straighten (set right) the crushed one
-8. **Judge the fatherless, plead for the widow** — *shifṭū yātōm, rîvū almānā* — speak for the orphan, contend for the widow
+The nine moves cluster into three phases. The pattern is exact:
 
-Notice the structure: **stop → learn → seek → act for the specific**. The remedy is not generic repentance. It is a directed sequence ending in concrete acts toward named categories of vulnerable people. The widow and orphan are the prophetic stand-ins for "the actual people whose blood your hands have touched."
+| Phase | Moves | Logic |
+|---|---|---|
+| **I. Personal cleansing** (v.16) | 1-4 | *Stop the harm. Become someone clean.* |
+| **II. Formation** (v.17a) | 5 | *Learn the positive shape — stopping is not enough.* |
+| **III. Specific action for the vulnerable** (v.17b) | 6-9 | *Concrete acts toward concrete people who cannot advocate for themselves.* |
 
-This is a candidate for a future practice file — *practices/clean-hands-protocol.md* or *practices/pre-prayer-audit.md* — that would operationalize the sequence as a recurring discipline. Not built yet; left as an open note.
+The progression: **cleanse → learn → act for the actual specific.** Notice what is NOT in the list — no "feel sorry," no "examine your conscience" as inner sentiment, no "renew your love for God." Every imperative is a verb of *doing*. The remedy is concrete from start to finish.
 
-## Open notes
+The progression of specificity is also important: from generic ("evil") to specific (the orphan, the widow). The remedy gets **more concrete** as it proceeds, not more abstract. The widow and orphan are not symbols; they are particular legal categories whose actual cases must be heard.
 
-**Practice distillation: TBD as a dedicated practice file.**
+### The nine moves
 
-When ready, the practice file would:
-- Stage 1: the audit (whom have my hands harmed? Whom am I currently failing?)
-- Stage 2: the cessation (concrete stop on at least one active harm)
-- Stage 3: the learning (study what doing-well looks like in the specific case)
-- Stage 4: the seeking (active pursuit of justice in some sphere — not abstract)
-- Stage 5: the act (one concrete act toward the widow/orphan-equivalent — the actual specific people)
+#### Phase I — Personal cleansing
 
-Trigger candidates: weekly (Friday afternoon? Saturday night before Sunday?), pre-Eucharist, before any sustained prayer session, after recognizing the *tarbū tephillā* failure-mode in oneself.
+**1. *raḥaṣū* — "wash yourselves."** *Rāḥaṣ* is the verb for washing with water — the standard term for priestly ritual washing at the laver (Ex 30:18-21), the high priest's washings on Yom Kippur (Lev 16:4), and ordinary bathing. The choice bridges the ritual and the ordinary. The form is reflexive: *wash yourselves*, not "be washed." The remedy does not start in the head; it starts **with the hands at the basin**. The first move is embodied. The same gesture across traditions — Islamic *wudū'*, Christian baptism, Jewish *netilat yadayim*, Hindu pre-puja ablution.
 
-Cross-reference when written: this verse, Job 16:17, Ps 24:3-4, Mt 5:23-24, Jas 4:8.
+**2. *hizzakkū* — "make yourselves pure."** Same root as Job 16:17's *zakkāh* — the pure lampstand oil. Hithpael (reflexive intensive): make yourselves *zakh*. Become the oil. Become olive-pressed pure. The vocabulary echoes the temple register. Isaiah is saying to the Israel of bloody hands what Job said of his clean hands — but as imperative rather than indicative. **Become what Job was.** The move from *raḥaṣ* (subtraction — getting blood off) to *zakkū* (positive transformation — becoming what is fit) is a sequence. The Christian tradition calls the second *katharsis*; the Sufi tradition calls it *tazkiyah* (same Semitic root). The work of years.
+
+**3. *hāsîrū rōa' ma'allêkhem mineged 'ênāy* — "put away the evil of your doings from before my eyes."** The verb *sūr* (Hiphil: *hēsîr*) means **to remove, take away, put aside** — the same verb used of removing idols (Gen 35:2, Josh 24:14). *Ma'allê* (plural of *ma'allāl*) means **"doings, practices"** — typically negative — a technical prophetic term for ongoing patterns of harmful action (Jer 4:4, 11:18, 21:12, 23:22, Hos 9:15, Zech 1:4). The plural matters: not a single deed but a **pattern of practice**. *Mineged 'ênāy* — "from before my eyes." God sees specifically. The remedy is to remove what is being seen. This is the **systemic move** — identify the specific ongoing practices, name them, dismantle them.
+
+**4. *ḥidlū hārēa'* — "cease to do evil."** *Ḥādal* means **to cease, stop, leave off**. The same verb God uses ceasing to build Babel (Gen 11:8). The simple, direct, present-tense imperative: **stop**. *Notice why this comes last in Phase I.* If "stop" were said first, the hearer would not know what. By the time *ḥidlū hārēa'* arrives, the specific evil has already been (a) recognized in the wash, (b) named by becoming the kind of person who sees it, (c) identified as a specific pattern of doings. *Now* the simple imperative can land — because the object of "stop" is no longer abstract.
+
+#### Phase II — Formation
+
+**5. *limdū hêṭêv* — "learn to do well."** The verb *lāmad* means **to learn** — but biblically, learning is associated with discipline and training. The root gives us *talmud* (study, learning), connected to the implements of ox-training. *Hêṭêv* — the Hiphil infinitive of *yāṭab*, **"to do well, to make good."** This is the bridging move. **It explicitly acknowledges that stopping evil is not the same as doing good.** They are different disciplines. A person can stop a harm and still not know what the alternative actually looks like in practice. The good is not instinctive; it must be cultivated. Pirkei Avot's whole frame rests on this. The Sufi *adab* (discipline) is the same. Learning-to-do-good is a craft — apprenticeship, observation, study, attempt-and-correction. The verb *limdū* encodes that you will be bad at the well-form for a while; that is expected.
+
+#### Phase III — Specific action for the vulnerable
+
+**6. *dirshū mishpāṭ* — "seek justice."** *Dārash* is **to seek, inquire, search out** — the same verb used of seeking the LORD (Deut 4:29), pursuing wisdom (Prov 11:27). It implies **active investigation, going to find what is hidden**. *Mishpāṭ* is **JUSTICE** — but richer than the English: the right ordering God established for human life, the **structural** form of righteousness in social-economic terms. When the prophets call for *mishpāṭ*, they mean: the actual *living-out* of God's order in concrete terms. **Justice must be sought because the structures of human life conceal injustice.** *Dārash mishpāṭ* is the curiosity-in-service-of-repair posture: *who is being treated unjustly that I cannot see at first glance?*
+
+**7. *ashshərū ḥāmōṣ* — "straighten the crushed."** *Ashshərū* is the Piel imperative of *āshar*: **to make straight, to lead aright, to set right.** Related to *āshar* meaning "happy, blessed" — make-happy-by-setting-right. *Ḥāmōṣ* — usually translated "oppressed" — comes from *ḥāmaṣ* (to be sharp, fierce, violent), passive form: **"the one who has been treated violently"**, the crushed one bent under pressure. The move: actively unbend them, relieve the pressure, restore the upright posture. **From the general (move 6) to the specific person:** once you have sought and found injustice, identify a particular person who has been crushed under it, and **set them right**. Specific, named, embodied.
+
+**8. *shifṭū yātōm* — "judge the orphan / vindicate the fatherless."** *Shāphaṭ* — judge — but richer than English: in the OT, judges weren't just adjudicators; they were *deliverers*. *Shifṭū yātōm* means **"act as judge ON BEHALF OF the orphan"** — get them justice when they cannot get it for themselves. *Yātōm* — fatherless — in the ancient Near East, the canonical example of the legally defenseless. Without a father, no advocate in the patriarchal legal system. **The orphan was the test case for whether the law actually worked for the powerless.** The eighth move: take up the cause of those who cannot take it up themselves.
+
+**9. *rîvū almānā* — "plead for the widow / contend for the widow."** *Rīv* (Qal: *rîvū*) is the **technical verb for legal advocacy in covenant-suit contexts**. *Riv* is the noun for "lawsuit." Hosea 4:1: *"The LORD hath a controversy (riv) with the inhabitants of the land."* So *rîvū almānā* — **"contend the widow's lawsuit."** Go to court for her. Argue her case where she cannot argue for herself. *Almānā* — widow — the other canonical figure of the legally vulnerable in the patriarchal legal system. **The widow + orphan pair is the signature OT shorthand for "the actually vulnerable"** — appearing across Deut 10:18, 14:29, 16:11, 16:14, 24:17-21, 26:12-13, 27:19; Ex 22:22; Lev 19:9-10. The NT picks up the exact pair: James 1:27 — *"Pure religion and undefiled before God and the Father is this, To visit the fatherless and widows in their affliction."*
+
+### The integrated arc
+
+```
+PHASE I — PERSONAL CLEANSING
+  1. wash         (water, body, ritual entry-point)
+  2. purify       (temple-oil pure; become the lampstand oil)
+  3. remove       (the patterns of doings, named specifically)
+  4. cease        (the active stop, on the named pattern)
+
+PHASE II — FORMATION
+  5. learn        (the discipline of cultivating the positive shape)
+
+PHASE III — SPECIFIC ACTION FOR THE VULNERABLE
+  6. seek         (investigate the hidden injustice)
+  7. straighten   (unbend the specific crushed person)
+  8. judge        (advocate for the orphan)
+  9. plead        (contend the widow's case)
+```
+
+The remedy moves **inward to outward**: from the body of the worshipper (wash), through her formation (purify, remove, cease, learn), to the world beyond her (seek, straighten, judge, plead). The "many prayers" of v.15 that God refused to hear were untethered from this sequence. The diagnostic of v.15 is the inverse of the work of v.16-17. *That* is why the worship was incoherent — it raised hands toward heaven while the world the hands had bent stayed unbent.
+
+The biblical claim Isaiah is making: **the temple-oil purity of Job 16:17 IS this work**. The *zakkāh* prayer is not produced by intention alone. It is produced by walking the nine-move sequence such that by the time hands lift, they are clean (no *ḥāmās*), the lamp is burning (the prayer is *zakkāh*), and the world contains the evidence (the widow has been pleaded for, the orphan has been judged).
+
+### Operationalized as practice
+
+The full operational form lives in [`../practices/clean-hands.md`](../practices/clean-hands/) — the three forms (3-minute daily / 10-15 minute pre-prayer / 30-45 minute weekly), each move unpacked with specific actions, the trigger conditions, integration with other practices. The texts file (this one) lays out the substance; the practice file lays out the discipline.
 
 ## One thing this verse can't tell you
 
