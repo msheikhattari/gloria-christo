@@ -1,0 +1,140 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Settings" description="Add your Anthropic API key (stored only in your browser).">
+  <div class="prose">
+    <h1>Settings</h1>
+
+    <p class="muted">
+      Stored only in your browser (<code>localStorage</code>). Never sent to any
+      server other than the model provider's API.
+    </p>
+
+    <form id="settings-form">
+      <div class="field">
+        <label for="apiKey">Anthropic API key</label>
+        <input
+          id="apiKey"
+          name="apiKey"
+          type="password"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="sk-ant-..."
+        />
+        <p class="hint muted">
+          Get one at <a href="https://console.anthropic.com/" rel="noopener">console.anthropic.com</a>.
+          You pay Anthropic directly for usage. This site never sees your key.
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="model">Model</label>
+        <select id="model" name="model">
+          <option value="claude-sonnet-4-6">Sonnet 4.6 (default — balanced)</option>
+          <option value="claude-opus-4-7">Opus 4.7 (deeper, slower, costlier)</option>
+          <option value="claude-haiku-4-5">Haiku 4.5 (fastest, cheapest)</option>
+        </select>
+      </div>
+
+      <div class="actions">
+        <button type="submit">save</button>
+        <button type="button" id="clear-btn">clear</button>
+        <span id="status" class="muted"></span>
+      </div>
+    </form>
+
+    <h2>Privacy notes</h2>
+    <ul>
+      <li>Your key never leaves your browser except in direct requests to Anthropic.</li>
+      <li>This site has no backend, no analytics, no telemetry. Open the browser network tab and verify.</li>
+      <li>To remove the key entirely: click <em>clear</em> above, or just clear site data in your browser.</li>
+      <li>If you fork or self-host this site, the same applies — your fork has no backend either.</li>
+    </ul>
+  </div>
+
+  <style>
+    .field { margin-block: 1.5rem; }
+    .field label {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+      color: var(--color-muted);
+    }
+    .field input, .field select {
+      width: 100%;
+      max-width: 28rem;
+      padding: 0.55rem 0.75rem;
+      background: var(--color-card);
+      color: var(--color-fg);
+      border: 1px solid var(--color-rule);
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+    }
+    .field select { font-family: var(--font-sans); }
+    .field input:focus, .field select:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+    .field .hint { margin-top: 0.4rem; font-size: 0.85rem; }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .actions button {
+      background: var(--color-card);
+      color: var(--color-fg);
+      border: 1px solid var(--color-rule);
+      border-radius: 4px;
+      padding: 0.45rem 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .actions button:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+    #status { font-family: var(--font-sans); font-size: 0.85rem; }
+  </style>
+
+  <script>
+    import { loadSettings, saveSettings, clearSettings } from "../lib/storage";
+
+    const form = document.getElementById("settings-form") as HTMLFormElement;
+    const apiKeyInput = document.getElementById("apiKey") as HTMLInputElement;
+    const modelSelect = document.getElementById("model") as HTMLSelectElement;
+    const status = document.getElementById("status") as HTMLElement;
+    const clearBtn = document.getElementById("clear-btn") as HTMLButtonElement;
+
+    function load() {
+      const s = loadSettings();
+      apiKeyInput.value = s.apiKey;
+      modelSelect.value = s.model;
+    }
+    load();
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      saveSettings({
+        apiKey: apiKeyInput.value.trim(),
+        provider: "anthropic",
+        model: modelSelect.value as any,
+      });
+      status.textContent = "saved.";
+      setTimeout(() => (status.textContent = ""), 2000);
+    });
+
+    clearBtn.addEventListener("click", () => {
+      clearSettings();
+      load();
+      status.textContent = "cleared.";
+      setTimeout(() => (status.textContent = ""), 2000);
+    });
+  </script>
+</Base>

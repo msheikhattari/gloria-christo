@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import AskAI from "../../components/AskAI.astro";
 
 export async function getStaticPaths() {
   const entries = await getCollection("concordance");
@@ -23,4 +24,5 @@ const title = titleMatch?.[1].trim() ?? entry.id;
     <p class="back-link no-print"><a href="/concordance/">← concordance</a></p>
     <Content />
   </article>
+  <AskAI pageTitle={`concordance: ${title}`} pageContent={entry.body ?? ""} />
 </Base>

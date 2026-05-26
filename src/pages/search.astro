@@ -2,42 +2,66 @@
 import Base from "../layouts/Base.astro";
 ---
 
-<Base title="Search" description="Full-text search across concordance, practices, and texts.">
+<Base title="Search" description="Full-text search across the corpus.">
   <div class="prose">
     <h1>Search</h1>
-    <p style="color: var(--color-muted);">
-      Full-text across every concordance entry, practice, and text analysis.
-      Index built at build time; works offline once the page is loaded.
+
+    <div id="search-mount" class="search-mount"></div>
+
+    <p id="search-fallback" class="muted" style="display: none;">
+      Search requires a built site (Pagefind index). If you're viewing this on
+      a dev server (<code>pnpm dev</code>), run <code>pnpm build</code> and
+      <code>pnpm preview</code> instead. If you're already on the built site
+      and seeing this, please open an issue.
     </p>
 
-    <div id="search-mount" class="mt-6"></div>
-
     <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
-    <script is:inline src="/pagefind/pagefind-ui.js"></script>
     <script is:inline>
-      window.addEventListener("DOMContentLoaded", () => {
-        // @ts-ignore — PagefindUI is global from the script tag above
-        new PagefindUI({
-          element: "#search-mount",
-          showSubResults: true,
-          showImages: false,
-          resetStyles: false,
-          translations: { placeholder: "search the corpus" },
-        });
-      });
+      (function () {
+        const mount = document.getElementById("search-mount");
+        const fallback = document.getElementById("search-fallback");
+        function init() {
+          if (typeof PagefindUI === "undefined") {
+            mount.style.display = "none";
+            fallback.style.display = "block";
+            return;
+          }
+          new PagefindUI({
+            element: "#search-mount",
+            showSubResults: true,
+            showImages: false,
+            resetStyles: false,
+            translations: { placeholder: "search the corpus" },
+          });
+        }
+        const s = document.createElement("script");
+        s.src = "/pagefind/pagefind-ui.js";
+        s.onload = init;
+        s.onerror = () => {
+          mount.style.display = "none";
+          fallback.style.display = "block";
+        };
+        document.head.appendChild(s);
+      })();
     </script>
 
     <style is:global>
+      .search-mount {
+        margin-top: 1.5rem;
+      }
       .pagefind-ui {
-        --pagefind-ui-scale: 0.95;
+        --pagefind-ui-scale: 1;
         --pagefind-ui-primary: var(--color-accent);
         --pagefind-ui-text: var(--color-fg);
         --pagefind-ui-background: var(--color-bg);
         --pagefind-ui-border: var(--color-rule);
-        --pagefind-ui-tag: color-mix(in srgb, var(--color-bg) 80%, var(--color-fg) 20%);
+        --pagefind-ui-tag: var(--color-card);
         --pagefind-ui-border-width: 1px;
         --pagefind-ui-border-radius: 4px;
         --pagefind-ui-font: var(--font-sans);
+      }
+      .pagefind-ui__search-input {
+        font-family: var(--font-sans) !important;
       }
     </style>
   </div>
