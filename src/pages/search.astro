@@ -11,8 +11,7 @@ import Base from "../layouts/Base.astro";
     <p id="search-fallback" class="muted" style="display: none;">
       Search requires a built site (Pagefind index). If you're viewing this on
       a dev server (<code>pnpm dev</code>), run <code>pnpm build</code> and
-      <code>pnpm preview</code> instead. If you're already on the built site
-      and seeing this, please open an issue.
+      <code>pnpm preview</code> instead.
     </p>
 
     <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
@@ -31,6 +30,7 @@ import Base from "../layouts/Base.astro";
             showSubResults: true,
             showImages: false,
             resetStyles: false,
+            showEmptyFilters: true,
             translations: { placeholder: "search the corpus" },
           });
         }
@@ -62,6 +62,9 @@ import Base from "../layouts/Base.astro";
       }
       .pagefind-ui__search-input {
         font-family: var(--font-sans) !important;
+      }
+      .pagefind-ui__filter-panel {
+        font-family: var(--font-sans);
       }
     </style>
   </div>

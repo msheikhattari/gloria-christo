@@ -1,3 +1,11 @@
+---
+type: theme
+themes: []
+related_themes: [lament, intercession, prayer-and-watch]
+related_practices: [praying-scripture]
+title_short: "the prayer that survives the removed hedge"
+---
+
 # relational prayer — the prayer that survives the removed hedge
 
 **Source register:** the book of Job + the Psalter's lament-deliverance cycle + cross-tradition

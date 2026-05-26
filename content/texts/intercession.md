@@ -1,3 +1,11 @@
+---
+type: theme
+themes: []
+related_themes: [lament, prayer-and-watch, relational-prayer]
+related_practices: [praying-scripture, praying-for-humility]
+title_short: "standing in the gap"
+---
+
 # intercession
 
 **Source register:** prophetic mediation, priestly standing-in-the-gap, communal confession

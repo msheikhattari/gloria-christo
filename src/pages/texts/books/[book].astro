@@ -1,0 +1,77 @@
+---
+import Base from "../../../layouts/Base.astro";
+import TextsSubnav from "../../../components/TextsSubnav.astro";
+import TypeBadge from "../../../components/TypeBadge.astro";
+import {
+  allTexts,
+  allBooks,
+  entriesByBook,
+  bookSlug,
+  sortByBook,
+  slugOf,
+  titleOf,
+} from "../../../lib/texts";
+
+export async function getStaticPaths() {
+  const all = await allTexts();
+  const books = allBooks(all);
+  return books.map((book) => ({
+    params: { book: bookSlug(book) },
+    props: { book },
+  }));
+}
+
+const { book } = Astro.props;
+const all = await allTexts();
+const entries = sortByBook(entriesByBook(all, book));
+---
+
+<Base title={`${book}`}>
+  <TextsSubnav />
+
+  <div class="prose">
+    <p class="muted small no-print"><a href="/texts/books/">← all books</a></p>
+
+    <h1>{book}</h1>
+    <p class="muted">Close-readings and narrative arcs anchored in this book.</p>
+
+    <ul class="entries-list">
+      {entries.map((e) => {
+        const ref = e.data.chapter
+          ? `${e.data.book} ${e.data.chapter}:${e.data.verse ?? ""}`
+          : titleOf(e);
+        return (
+          <li>
+            <a href={`/texts/${slugOf(e)}/`}>
+              <strong>{ref}</strong>
+            </a>
+            <TypeBadge type={e.data.type} />
+            {e.data.title_short && (
+              <div class="muted small">{e.data.title_short}</div>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+
+  <style>
+    .entries-list { list-style: none; padding: 0; }
+    .entries-list li {
+      margin-block: 0.75em;
+      padding-block: 0.5em;
+      border-bottom: 1px dashed var(--color-rule);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    .entries-list li:last-child { border-bottom: none; }
+    .entries-list .muted.small {
+      flex-basis: 100%;
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
+    }
+    .small { font-size: 0.85rem; }
+  </style>
+</Base>

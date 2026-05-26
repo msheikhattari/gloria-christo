@@ -1,38 +1,101 @@
 ---
-import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import TextsSubnav from "../../components/TextsSubnav.astro";
+import {
+  allTexts,
+  byType,
+  sortByBook,
+  sortByTitle,
+  slugOf,
+  titleOf,
+} from "../../lib/texts";
 
-const all = await getCollection("texts");
+const all = await allTexts();
 
-function parseEntry(entry: (typeof all)[number]) {
-  const body = entry.body ?? "";
-  const titleMatch = body.match(/^#\s+(.+)$/m);
-  return {
-    slug: entry.id.replace(/\.md$/, ""),
-    title: titleMatch?.[1].trim() ?? entry.id,
-  };
+const themes = sortByTitle(byType(all, "theme"));
+const narratives = sortByBook(byType(all, "narrative"));
+const verses = sortByBook(byType(all, "verse"));
+
+function shortTitle(e: typeof all[number]): string {
+  const ts = e.data.title_short;
+  if (ts) return ts;
+  return titleOf(e);
 }
-
-const entries = all
-  .filter((e) => !(e.id === "README.md" || e.id === "README"))
-  .map(parseEntry)
-  .sort((a, b) => a.title.localeCompare(b.title));
 ---
 
-<Base title="Texts" description="Close readings of specific scripture passages.">
+<Base title="Texts" description="Close readings of specific scripture passages, narratives, and themes.">
+  <TextsSubnav />
+
   <div class="prose">
     <h1>Texts</h1>
-    <p style="color: var(--color-muted);">
-      Close readings of specific passages. Hebrew + Greek where it serves the practice.
-      Multi-register methodology (LXX + Masoretic + patristic + chosen teacher).
+    <p class="muted">
+      Close readings of specific passages — verse-anchored, narrative arcs, and thematic aggregates.
+      Hebrew + Greek where it serves the practice.
     </p>
 
-    <ul>
-      {entries.map((e) => (
-        <li>
-          <a href={`/texts/${e.slug}/`}>{e.title}</a>
-        </li>
-      ))}
-    </ul>
+    {themes.length > 0 && (
+      <>
+        <h2>Themes</h2>
+        <p class="muted small">Curated multi-passage groupings.</p>
+        <ul class="texts-list">
+          {themes.map((e) => (
+            <li>
+              <a href={`/texts/${slugOf(e)}/`}>
+                <strong>{titleOf(e)}</strong>
+              </a>
+              {e.data.title_short && (
+                <span class="muted"> — {e.data.title_short}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+
+    {verses.length > 0 && (
+      <>
+        <h2>Close readings</h2>
+        <p class="muted small">Verse-anchored. Hebrew + Greek where it serves.</p>
+        <ul class="texts-list">
+          {verses.map((e) => {
+            const ref = e.data.book && e.data.chapter ? `${e.data.book} ${e.data.chapter}:${e.data.verse ?? ""}` : "";
+            return (
+              <li>
+                <a href={`/texts/${slugOf(e)}/`}>
+                  <strong>{ref || titleOf(e)}</strong>
+                </a>
+                {e.data.title_short && (
+                  <span class="muted"> — {e.data.title_short}</span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </>
+    )}
+
+    {narratives.length > 0 && (
+      <>
+        <h2>Narrative arcs</h2>
+        <ul class="texts-list">
+          {narratives.map((e) => (
+            <li>
+              <a href={`/texts/${slugOf(e)}/`}>
+                <strong>{titleOf(e)}</strong>
+              </a>
+              {e.data.title_short && (
+                <span class="muted"> — {e.data.title_short}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
   </div>
+
+  <style>
+    .texts-list { list-style: none; padding: 0; }
+    .texts-list li { margin-block: 0.5em; padding-block: 0.3em; }
+    .small { font-size: 0.85rem; }
+  </style>
 </Base>

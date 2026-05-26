@@ -1,0 +1,113 @@
+---
+import Base from "../../../layouts/Base.astro";
+import TextsSubnav from "../../../components/TextsSubnav.astro";
+import TypeBadge from "../../../components/TypeBadge.astro";
+import {
+  allTexts,
+  allThemes,
+  entriesByTheme,
+  slugOf,
+  titleOf,
+  sortByBook,
+} from "../../../lib/texts";
+
+export async function getStaticPaths() {
+  const entries = (await allTexts());
+  const themes = allThemes(entries);
+  return themes.map((theme) => ({
+    params: { theme },
+    props: { theme },
+  }));
+}
+
+const { theme } = Astro.props;
+const all = await allTexts();
+const matching = entriesByTheme(all, theme);
+
+// The theme file itself (if it exists)
+const themeFile = matching.find(
+  (e) => e.data.type === "theme" && slugOf(e) === theme
+);
+
+// All other entries that touch this theme
+const others = sortByBook(matching.filter((e) => e !== themeFile));
+---
+
+<Base title={`theme: ${theme}`}>
+  <TextsSubnav />
+
+  <div class="prose">
+    <p class="muted small no-print">
+      <a href="/texts/themes/">← all themes</a>
+    </p>
+
+    <h1>{theme}</h1>
+
+    {themeFile && (
+      <p class="theme-file-link">
+        <a href={`/texts/${slugOf(themeFile)}/`}>
+          📖 Open the {theme} theme file →
+        </a>
+        {themeFile.data.title_short && (
+          <span class="muted small"> ({themeFile.data.title_short})</span>
+        )}
+      </p>
+    )}
+
+    {others.length > 0 ? (
+      <>
+        <h2>Passages that touch this theme</h2>
+        <ul class="entries-list">
+          {others.map((e) => {
+            const ref = e.data.book && e.data.chapter
+              ? `${e.data.book} ${e.data.chapter}:${e.data.verse ?? ""}`
+              : titleOf(e);
+            return (
+              <li>
+                <a href={`/texts/${slugOf(e)}/`}>
+                  <strong>{ref}</strong>
+                </a>
+                <TypeBadge type={e.data.type} />
+                {e.data.title_short && (
+                  <div class="muted small">{e.data.title_short}</div>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </>
+    ) : (
+      !themeFile && (
+        <p class="muted">No entries yet for this theme.</p>
+      )
+    )}
+  </div>
+
+  <style>
+    .theme-file-link {
+      padding: 0.85em 1em;
+      border: 1px solid var(--color-accent);
+      border-radius: 6px;
+      background: color-mix(in srgb, var(--color-card) 70%, var(--color-accent) 12%);
+      margin-block: 1.5rem;
+    }
+    .theme-file-link a { text-decoration: none; }
+    .entries-list { list-style: none; padding: 0; }
+    .entries-list li {
+      margin-block: 0.75em;
+      padding-block: 0.5em;
+      border-bottom: 1px dashed var(--color-rule);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    .entries-list li:last-child { border-bottom: none; }
+    .entries-list .muted.small {
+      flex-basis: 100%;
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
+    }
+    .small { font-size: 0.85rem; }
+  </style>
+</Base>

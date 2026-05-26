@@ -1,0 +1,43 @@
+---
+import { typeLabel } from "../lib/texts";
+
+interface Props {
+  type?: string;
+}
+const { type } = Astro.props;
+const label = typeLabel(type);
+if (!label) return null;
+---
+
+<span class={`type-badge type-${type}`}>{label}</span>
+
+<style>
+  .type-badge {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.15em 0.6em;
+    border-radius: 999px;
+    border: 1px solid var(--color-rule);
+    background: var(--color-card);
+    color: var(--color-muted);
+    vertical-align: middle;
+    margin-bottom: 0.5em;
+  }
+  .type-verse {
+    border-color: color-mix(in srgb, var(--color-link) 60%, var(--color-rule));
+    color: var(--color-link);
+  }
+  .type-narrative {
+    border-color: color-mix(in srgb, var(--color-accent) 60%, var(--color-rule));
+    color: var(--color-accent);
+  }
+  .type-theme {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-card) 70%, var(--color-accent) 12%);
+    font-weight: 500;
+  }
+</style>

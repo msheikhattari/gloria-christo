@@ -2,6 +2,8 @@
 import { getCollection, render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import AskAI from "../../components/AskAI.astro";
+import TypeBadge from "../../components/TypeBadge.astro";
+import { slugOf, titleOf } from "../../lib/texts";
 
 export async function getStaticPaths() {
   const entries = await getCollection("texts");
@@ -15,14 +17,63 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const titleMatch = entry.body?.match(/^#\s+(.+)$/m);
-const title = titleMatch?.[1].trim() ?? entry.id;
+const title = titleOf(entry);
+const type = entry.data.type;
+const themes: string[] = entry.data.themes ?? [];
+const relatedThemes: string[] = entry.data.related_themes ?? [];
+const book = entry.data.book;
+
+const allRelated = new Set<string>([...themes, ...relatedThemes]);
 ---
 
 <Base title={`text: ${title}`}>
+  {/* Pagefind filter / metadata for search faceting */}
+  {type && <meta data-pagefind-filter={`type:${type}`} />}
+  {book && <meta data-pagefind-filter={`book:${book}`} />}
+  {entry.data.genre && <meta data-pagefind-filter={`genre:${entry.data.genre}`} />}
+  {themes.map((t) => <meta data-pagefind-filter={`theme:${t}`} />)}
+
   <article class="prose" data-pagefind-body>
     <p class="back-link no-print"><a href="/texts/">← texts</a></p>
+
+    <TypeBadge type={type} />
+
     <Content />
+
+    {allRelated.size > 0 && (
+      <p class="related-themes no-print">
+        <span class="muted">themes:</span>
+        {Array.from(allRelated).map((t) => (
+          <a href={`/texts/themes/${t}/`} class="theme-pill">{t}</a>
+        ))}
+      </p>
+    )}
   </article>
   <AskAI pageTitle={`text: ${title}`} pageContent={entry.body ?? ""} />
 </Base>
+
+<style>
+  .related-themes {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-rule);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+  .theme-pill {
+    display: inline-block;
+    padding: 0.15em 0.7em;
+    border-radius: 999px;
+    border: 1px solid var(--color-rule);
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+  .theme-pill:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+</style>

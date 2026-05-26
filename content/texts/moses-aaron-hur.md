@@ -1,3 +1,13 @@
+---
+type: narrative
+book: Exodus
+testament: OT
+genre: torah
+themes: [intercession, prayer-and-watch]
+related_practices: [praying-scripture]
+title_short: "Aaron and Hur hold up Moses' hands"
+---
+
 # Moses, Aaron, and Hur — Exodus 17:8-13
 
 **Source:** Exodus 17:8-13

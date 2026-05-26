@@ -1,0 +1,33 @@
+---
+const pathname = Astro.url.pathname.replace(/\/$/, "");
+const isActive = (p: string) => pathname === p || pathname.startsWith(p + "/");
+---
+
+<nav class="texts-subnav">
+  <a href="/texts/" class={pathname === "/texts" ? "active" : ""}>all</a>
+  <a href="/texts/themes/" class={isActive("/texts/themes") ? "active" : ""}>by theme</a>
+  <a href="/texts/books/" class={isActive("/texts/books") ? "active" : ""}>by book</a>
+</nav>
+
+<style>
+  .texts-subnav {
+    max-width: 68ch;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    gap: 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .texts-subnav a {
+    color: var(--color-muted);
+    text-decoration: none;
+    padding: 0.2em 0;
+  }
+  .texts-subnav a:hover { color: var(--color-fg); }
+  .texts-subnav a.active {
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+</style>

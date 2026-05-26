@@ -1,3 +1,11 @@
+---
+type: theme
+themes: []
+related_themes: [intercession, relational-prayer]
+related_practices: [chanting-and-singing, praying-scripture]
+title_short: "trowel and sword"
+---
+
 # prayer and watch
 
 **Source register:** Nehemiah's wall-building + the trowel-and-sword pattern + cross-tradition contemplation-and-action

@@ -1,3 +1,15 @@
+---
+type: verse
+book: 1 Samuel
+chapter: 12
+verse: 19
+testament: OT
+genre: historical
+themes: [intercession, hidden-vs-visible]
+related_practices: [praying-scripture]
+title_short: "we have added unto all our sins this evil"
+---
+
 # 1 Samuel 12:19 — "we have added unto all our sins this evil, to ask us a king"
 
 **Source:** 1 Samuel 12:19 (with 8:7, 12:17-18 as immediate context; Deut 17:14-20 as warrant)

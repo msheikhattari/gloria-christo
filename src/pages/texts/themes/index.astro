@@ -1,0 +1,68 @@
+---
+import Base from "../../../layouts/Base.astro";
+import TextsSubnav from "../../../components/TextsSubnav.astro";
+import { allTexts, allThemes, entriesByTheme } from "../../../lib/texts";
+
+const all = await allTexts();
+const themes = allThemes(all);
+
+const themeData = themes.map((t) => ({
+  name: t,
+  count: entriesByTheme(all, t).length,
+}));
+themeData.sort((a, b) => b.count - a.count);
+---
+
+<Base title="Texts by theme">
+  <TextsSubnav />
+
+  <div class="prose">
+    <h1>By theme</h1>
+    <p class="muted">
+      Each theme aggregates the close-readings, narratives, and theme-files that touch it.
+    </p>
+
+    <ul class="theme-grid">
+      {themeData.map((t) => (
+        <li>
+          <a href={`/texts/themes/${t.name}/`}>
+            <span class="name">{t.name}</span>
+            <span class="count muted">{t.count}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <style>
+    .theme-grid {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      gap: 0.5rem;
+    }
+    .theme-grid a {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.5em 0.85em;
+      border: 1px solid var(--color-rule);
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--color-fg);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      background: var(--color-card);
+    }
+    .theme-grid a:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+    .theme-grid .count {
+      font-size: 0.8rem;
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</Base>

@@ -1,0 +1,65 @@
+---
+import Base from "../../../layouts/Base.astro";
+import TextsSubnav from "../../../components/TextsSubnav.astro";
+import { allTexts, allBooks, entriesByBook, bookSlug } from "../../../lib/texts";
+
+const all = await allTexts();
+const books = allBooks(all);
+
+const bookData = books.map((book) => ({
+  name: book,
+  slug: bookSlug(book),
+  count: entriesByBook(all, book).length,
+}));
+---
+
+<Base title="Texts by book">
+  <TextsSubnav />
+
+  <div class="prose">
+    <h1>By book</h1>
+    <p class="muted">Bible-book navigation of texts in the corpus.</p>
+
+    <ul class="book-list">
+      {bookData.map((b) => (
+        <li>
+          <a href={`/texts/books/${b.slug}/`}>
+            <span class="name">{b.name}</span>
+            <span class="count muted">{b.count}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <style>
+    .book-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+      gap: 0.5rem;
+    }
+    .book-list a {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 0.5em 0.85em;
+      border: 1px solid var(--color-rule);
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--color-fg);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      background: var(--color-card);
+    }
+    .book-list a:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+    .book-list .count {
+      font-size: 0.8rem;
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</Base>

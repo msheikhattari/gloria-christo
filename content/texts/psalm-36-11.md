@@ -1,3 +1,15 @@
+---
+type: verse
+book: Psalms
+chapter: 36
+verse: 11
+testament: OT
+genre: psalms
+themes: [pride, humility]
+related_practices: [praying-for-humility]
+title_short: "let not the foot of pride come against me"
+---
+
 # Psalm 36:11 — "Let not the foot of pride come against me"
 
 **Source:** Psalm 36:11 (KJV / Hebrew numbering) = Psalm 35:12 (LXX / OSB numbering)

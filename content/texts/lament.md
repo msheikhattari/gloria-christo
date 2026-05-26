@@ -1,3 +1,13 @@
+---
+type: theme
+testament: OT
+genre: psalms
+themes: []
+related_themes: [intercession, relational-prayer]
+related_practices: [praying-for-humility, praying-scripture]
+title_short: "the prayer that holds the worst honestly"
+---
+
 # lament
 
 **Source register:** Psalter prayer-of-lament + prophetic + NT extensions + Job
