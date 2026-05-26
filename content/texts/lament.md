@@ -141,6 +141,10 @@ When ready, possible directions:
 
 ## Cross-references
 
+- [`./job-16-17.md`](./job-16-17/) — Job's direct counter to Eliphaz: *my prayer is pure (zakkāh)* — the canonical articulation of pure-prayer-through-suffering
+- [`./job-21-15.md`](./job-21-15/) — the wicked's rejection of prayer; the explicit transactional rejection that Job is NOT in
+- [`./job-22-27.md`](./job-22-27/) — Eliphaz's third speech repackaging the same retribution theology in promissory form
+- [`./relational-prayer.md`](./relational-prayer/) — how the lament cycle survives the absence of transactional payoff
 - [`./psalm-36-11.md`](./psalm-36-11/) — pride's foot, the petition against being shaken loose (related anti-pride register)
 - [`./intercession.md`](./intercession/) — the prophet-intercessor mode (lament can be intercessory)
 - [`../practices/praying-for-humility.md`](../practices/praying-for-humility/) — the seven Penitential Psalms cycle overlaps heavily with personal lament
