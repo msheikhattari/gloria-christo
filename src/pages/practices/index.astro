@@ -1,0 +1,23 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+const all = await getCollection("practices");
+const readme = all.find((e) => e.id.toLowerCase().replace(/\.md$/, "") === "readme");
+const { Content } = readme ? await render(readme) : { Content: null };
+---
+
+<Base title="Practices" description="Operational scripture-study practices: memorization, chanting, praying scripture, praying for humility.">
+  <article class="prose" data-pagefind-body>
+    {Content ? <Content /> : (
+      <>
+        <h1>Practices</h1>
+        <ul>
+          {all.filter(e => e.id.toLowerCase().replace(/\.md$/, "") !== "readme").map((e) => (
+            <li><a href={`/practices/${e.id.replace(/\.md$/, "")}/`}>{e.id.replace(/\.md$/, "")}</a></li>
+          ))}
+        </ul>
+      </>
+    )}
+  </article>
+</Base>

@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("texts");
+  return entries
+    .filter((e) => e.id.toLowerCase().replace(/\.md$/, "") !== "readme")
+    .map((entry) => ({
+      params: { slug: entry.id.replace(/\.md$/, "") },
+      props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const titleMatch = entry.body?.match(/^#\s+(.+)$/m);
+const title = titleMatch?.[1].trim() ?? entry.id;
+---
+
+<Base title={`text: ${title}`}>
+  <article class="prose" data-pagefind-body>
+    <p class="back-link no-print"><a href="/texts/">← texts</a></p>
+    <Content />
+  </article>
+</Base>

@@ -1,0 +1,76 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+
+const all = await getCollection("concordance");
+
+function parseEntry(entry: (typeof all)[number]) {
+  const body = entry.body ?? "";
+  const titleMatch = body.match(/^#\s+(.+)$/m);
+  const countMatch = body.match(/^([\d,]+)\s+verses/m);
+  return {
+    slug: entry.id.replace(/\.md$/, ""),
+    name: titleMatch?.[1].trim() ?? entry.id,
+    count: countMatch ? parseInt(countMatch[1].replace(/,/g, ""), 10) : 0,
+  };
+}
+
+const entries = all
+  .filter((e) => !e.id.startsWith("README"))
+  .map(parseEntry);
+
+const gann = entries.filter((e) => e.slug.startsWith("gann-")).sort((a, b) => a.name.localeCompare(b.name));
+const law = entries.filter((e) => e.slug.startsWith("law-")).sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<Base title="Concordance" description="64 KJV keyword verse-lists for scripture-shaped study.">
+  <div class="prose">
+    <h1>Concordance</h1>
+    <p class="muted">
+      {entries.length} keywords. Pick a concept, read every passage containing it,
+      identify the verses that condense the divine pattern.
+    </p>
+
+    <blockquote>
+      <em>"Should use a Bible with a concordance and read everything under faith, fasting, love, prayer..."</em><br />
+      — W.D. Gann, <em>The Magic Word</em> (1950)
+    </blockquote>
+
+    <h2>How to use</h2>
+    <ol>
+      <li>Pick a keyword from the lists below</li>
+      <li>Open the corresponding file — every KJV verse containing that word, in canonical order</li>
+      <li>Read every verse</li>
+      <li>Identify the 10-20 that most condense the divine pattern</li>
+      <li>Memorize, chant, and pray them (see <a href="/practices/">practices</a>)</li>
+    </ol>
+
+    <h2>Gann's named keywords</h2>
+    <p>Concepts named in W.D. Gann's <em>The Magic Word</em> (1950) as worth concordance-study.</p>
+    <table>
+      <thead><tr><th>Keyword</th><th class="num">Verses</th></tr></thead>
+      <tbody>
+        {gann.map((e) => (
+          <tr>
+            <td><a href={`/concordance/${e.slug}/`}>{e.name}</a></td>
+            <td class="num">{e.count.toLocaleString()}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <h2>Law-direct keywords</h2>
+    <p>Re-rank focused on the law / commandment / covenant vocabulary.</p>
+    <table>
+      <thead><tr><th>Keyword</th><th class="num">Verses</th></tr></thead>
+      <tbody>
+        {law.map((e) => (
+          <tr>
+            <td><a href={`/concordance/${e.slug}/`}>{e.name}</a></td>
+            <td class="num">{e.count.toLocaleString()}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</Base>

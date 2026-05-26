@@ -1,0 +1,44 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Search" description="Full-text search across concordance, practices, and texts.">
+  <div class="prose">
+    <h1>Search</h1>
+    <p style="color: var(--color-muted);">
+      Full-text across every concordance entry, practice, and text analysis.
+      Index built at build time; works offline once the page is loaded.
+    </p>
+
+    <div id="search-mount" class="mt-6"></div>
+
+    <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+    <script is:inline src="/pagefind/pagefind-ui.js"></script>
+    <script is:inline>
+      window.addEventListener("DOMContentLoaded", () => {
+        // @ts-ignore — PagefindUI is global from the script tag above
+        new PagefindUI({
+          element: "#search-mount",
+          showSubResults: true,
+          showImages: false,
+          resetStyles: false,
+          translations: { placeholder: "search the corpus" },
+        });
+      });
+    </script>
+
+    <style is:global>
+      .pagefind-ui {
+        --pagefind-ui-scale: 0.95;
+        --pagefind-ui-primary: var(--color-accent);
+        --pagefind-ui-text: var(--color-fg);
+        --pagefind-ui-background: var(--color-bg);
+        --pagefind-ui-border: var(--color-rule);
+        --pagefind-ui-tag: color-mix(in srgb, var(--color-bg) 80%, var(--color-fg) 20%);
+        --pagefind-ui-border-width: 1px;
+        --pagefind-ui-border-radius: 4px;
+        --pagefind-ui-font: var(--font-sans);
+      }
+    </style>
+  </div>
+</Base>

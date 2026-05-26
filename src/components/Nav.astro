@@ -1,0 +1,17 @@
+---
+const pathname = Astro.url.pathname.replace(/\/$/, "");
+const isActive = (prefix: string) =>
+  pathname === prefix || pathname.startsWith(prefix + "/");
+---
+
+<nav class="site-nav">
+  <div class="inner">
+    <a href="/" class="brand">gloria-christo</a>
+    <div class="links">
+      <a href="/concordance/" class={isActive("/concordance") ? "active" : ""}>concordance</a>
+      <a href="/practices/" class={isActive("/practices") ? "active" : ""}>practices</a>
+      <a href="/texts/" class={isActive("/texts") ? "active" : ""}>texts</a>
+      <a href="/search/" class={isActive("/search") ? "active" : ""}>search</a>
+    </div>
+  </div>
+</nav>
